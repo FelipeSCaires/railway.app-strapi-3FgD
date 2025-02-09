@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "daily_deals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::daily-deal.daily-deal",
+      "mappedBy": "categories"
+    },
+    "special_moments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::special-moment.special-moment",
+      "mappedBy": "categories"
+    }
+  }
+}
